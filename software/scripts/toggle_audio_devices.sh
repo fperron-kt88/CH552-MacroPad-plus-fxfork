@@ -7,7 +7,6 @@ LAPDOCK_SOURCE="alsa_input.usb-DisplayLink_LAPDOCK_U3D2338811954-02.iec958-stere
 SPEAKER_SINK="alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp__sink"
 MIC_SOURCE="alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp_6__source"
 
-
 # Get the current default sink and source
 CURRENT_SINK=$(pactl get-default-sink)
 CURRENT_SOURCE=$(pactl get-default-source)

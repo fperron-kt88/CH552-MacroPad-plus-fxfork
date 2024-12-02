@@ -30,10 +30,18 @@ log() {
 if [[ -n "$key" ]]; then
     log "The value of --key is: $key"
 
-    # Check if the key is FX_F13 and call toggle_audio_devices.sh
+        # Handle specific key presses
     if [[ "$key" == "FX_F13" ]]; then
         log "Triggering toggle_audio_devices.sh for $key"
         toggle_audio_devices.sh >> "$logfile" 2>&1
+    elif [[ "$key" == "FX_F15" ]]; then
+        log "Triggering increment_by_5.sh for $key"
+        increment_by_5.sh >> "$logfile" 2>&1
+    elif [[ "$key" == "FX_F18" ]]; then
+        log "Triggering decrement_by_5.sh for $key"
+        decrement_by_5.sh >> "$logfile" 2>&1
+    else
+        log "No action defined for key $key"
     fi
 else
     log "Error: --key parameter is required"
